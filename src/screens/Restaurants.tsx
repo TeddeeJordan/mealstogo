@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
 import React from "react";
 
 import Searchbar from "../components/Searchbar";
@@ -15,7 +15,17 @@ const Restaurants = (): JSX.Element => {
           <Searchbar placeholder="Search" value="" />
         </View>
         <View style={styles.list}>
-          <PlaceCard />
+          <PlaceCard
+            name="Some Restaurant"
+            icon="test.jpg"
+            photos={[
+              "https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg",
+            ]}
+            address="100 some random st"
+            isOpenNow={true}
+            rating={4}
+            isClosedTemporarily={false}
+          />
         </View>
       </SafeAreaView>
       <ExpoStatusBar style="auto" />
