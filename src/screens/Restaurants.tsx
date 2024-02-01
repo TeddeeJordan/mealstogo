@@ -49,6 +49,5 @@ const styles = StyleSheet.create({
     flexGrow: 0.95,
     backgroundColor: "blue",
     paddingTop: 10,
-    paddingLeft: 12,
   },
 });
