@@ -1,9 +1,10 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
 import React from "react";
 
 import Searchbar from "../components/Searchbar";
 import PlaceCard from "../components/PlaceCard";
+import { theme } from "../theme/theme";
 
 type RestaurantsProps = {};
 
@@ -15,7 +16,17 @@ const Restaurants = (): JSX.Element => {
           <Searchbar placeholder="Search" value="" />
         </View>
         <View style={styles.list}>
-          <PlaceCard />
+          <PlaceCard
+            name="Some Restaurant"
+            icon="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png"
+            photos={[
+              "https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg",
+            ]}
+            address="100 some random st"
+            isOpenNow={true}
+            rating={4}
+            isClosedTemporarily={false}
+          />
         </View>
       </SafeAreaView>
       <ExpoStatusBar style="auto" />
@@ -33,12 +44,11 @@ const styles = StyleSheet.create({
   search: {
     flexGrow: 0.05,
     justifyContent: "center",
-    paddingLeft: 12,
+    paddingLeft: theme.spacing.lg,
   },
   list: {
     flexGrow: 0.95,
-    backgroundColor: "blue",
-    paddingTop: 10,
-    paddingLeft: 12,
+    backgroundColor: theme.colors.bg.primary,
+    paddingTop: theme.spacing.md,
   },
 });
