@@ -63,16 +63,17 @@ const Restaurants = (): JSX.Element => {
         <View style={styles.list}>
           <FlatList
             data={data}
-            renderItem={(item) => (
+            keyExtractor={(item) => item.name}
+            renderItem={({ item }) => (
               <View style={styles.listItemContainer}>
                 <PlaceCard
-                  name={item.item.name}
-                  icon={item.item.icon}
-                  photos={item.item.photos}
-                  address={item.item.address}
-                  isOpenNow={item.item.isOpenNow}
-                  rating={item.item.rating}
-                  isClosedTemporarily={item.item.isClosedTemporarily}
+                  name={item.name}
+                  icon={item.icon}
+                  photos={item.photos}
+                  address={item.address}
+                  isOpenNow={item.isOpenNow}
+                  rating={item.rating}
+                  isClosedTemporarily={item.isClosedTemporarily}
                 />
               </View>
             )}
