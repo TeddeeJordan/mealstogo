@@ -4,8 +4,6 @@ import { Card, Text } from "react-native-paper";
 import { theme } from "../theme/theme";
 import { SvgXml } from "react-native-svg";
 
-// const starPath = require("../../assets/star.svg") as string;
-
 type PlaceCardProps = {
   name: string;
   icon: string;
@@ -38,8 +36,8 @@ const PlaceCard = ({
         <Card.Content>
           <Text style={styles.title}>{name}</Text>
           <View style={styles.ratingContainer}>
-            {ratingArray.map(() => (
-              <SvgXml xml={starPath} height={20} width={20} />
+            {ratingArray.map((element, index) => (
+              <SvgXml key={index} xml={starPath} height={20} width={20} />
             ))}
             <View style={styles.openContainer}>
               {isClosedTemporarily && <View><Text style={styles.closedText}>CLOSED TEMPORARILY</Text></View>}
@@ -89,6 +87,7 @@ const styles = StyleSheet.create({
   closedText: {
     color: 'red',
     marginHorizontal: theme.spacing.md,
+    fontFamily: theme.fonts.fontFamily.monospace,
   },
   icon: {
     width: 15,

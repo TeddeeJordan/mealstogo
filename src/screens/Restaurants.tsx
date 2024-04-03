@@ -1,10 +1,55 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  StatusBar,
+  FlatList,
+} from "react-native";
 import React from "react";
 
 import Searchbar from "../components/Searchbar";
 import PlaceCard from "../components/PlaceCard";
 import { theme } from "../theme/theme";
+
+const data = [
+  {
+    name: "Some Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: true,
+    rating: 4,
+    isClosedTemporarily: false,
+  },
+  {
+    name: "Some Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: true,
+    rating: 4,
+    isClosedTemporarily: false,
+  },
+  {
+    name: "Some Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: true,
+    rating: 4,
+    isClosedTemporarily: false,
+  },
+  {
+    name: "Some Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: true,
+    rating: 4,
+    isClosedTemporarily: false,
+  },
+];
 
 type RestaurantsProps = {};
 
@@ -16,16 +61,21 @@ const Restaurants = (): JSX.Element => {
           <Searchbar placeholder="Search" value="" />
         </View>
         <View style={styles.list}>
-          <PlaceCard
-            name="Some Restaurant"
-            icon="https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png"
-            photos={[
-              "https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg",
-            ]}
-            address="100 some random st"
-            isOpenNow={true}
-            rating={4}
-            isClosedTemporarily={false}
+          <FlatList
+            data={data}
+            renderItem={(item) => (
+              <View style={styles.listItemContainer}>
+                <PlaceCard
+                  name={item.item.name}
+                  icon={item.item.icon}
+                  photos={item.item.photos}
+                  address={item.item.address}
+                  isOpenNow={item.item.isOpenNow}
+                  rating={item.item.rating}
+                  isClosedTemporarily={item.item.isClosedTemporarily}
+                />
+              </View>
+            )}
           />
         </View>
       </SafeAreaView>
@@ -51,4 +101,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.bg.primary,
     paddingTop: theme.spacing.md,
   },
+  listItemContainer: {
+    paddingVertical: theme.spacing.md,
+  }
 });
