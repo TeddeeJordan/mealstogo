@@ -14,34 +14,34 @@ import { theme } from "../theme/theme";
 
 const data = [
   {
-    name: "Some Restaurant",
+    name: "Some American Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: false,
+    rating: 3,
+    isClosedTemporarily: false,
+  },
+  {
+    name: "Some Italian Restaurant",
+    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
+    address: "100 Some Random Street",
+    isOpenNow: false,
+    rating: 2,
+    isClosedTemporarily: true,
+  },
+  {
+    name: "Some Sushi Restaurant",
     icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
     address: "100 Some Random Street",
     isOpenNow: true,
-    rating: 4,
+    rating: 3,
     isClosedTemporarily: false,
   },
   {
-    name: "Some Restaurant",
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
-    address: "100 Some Random Street",
-    isOpenNow: true,
-    rating: 4,
-    isClosedTemporarily: false,
-  },
-  {
-    name: "Some Restaurant",
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
-    address: "100 Some Random Street",
-    isOpenNow: true,
-    rating: 4,
-    isClosedTemporarily: false,
-  },
-  {
-    name: "Some Restaurant",
+    name: "Some Thai Restaurant",
     icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos: ["https://resizer.otstatic.com/v2/photos/xlarge/1/25175467.jpg"],
     address: "100 Some Random Street",
@@ -51,7 +51,7 @@ const data = [
   },
 ];
 
-type RestaurantsProps = {};
+// type RestaurantsProps = {};
 
 const Restaurants = (): JSX.Element => {
   return (
@@ -103,5 +103,5 @@ const styles = StyleSheet.create({
   },
   listItemContainer: {
     paddingVertical: theme.spacing.md,
-  }
+  },
 });
