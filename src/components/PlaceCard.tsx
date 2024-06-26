@@ -4,8 +4,6 @@ import { Card, Text } from "react-native-paper";
 import { theme } from "../theme/theme";
 import { SvgXml } from "react-native-svg";
 
-// const starPath = require("../../assets/star.svg") as string;
-
 type PlaceCardProps = {
   name: string;
   icon: string;
@@ -38,13 +36,17 @@ const PlaceCard = ({
         <Card.Content>
           <Text style={styles.title}>{name}</Text>
           <View style={styles.ratingContainer}>
-            {ratingArray.map(() => (
-              <SvgXml xml={starPath} height={20} width={20} />
+            {ratingArray.map((element, index) => (
+              <SvgXml key={index} xml={starPath} height={20} width={20} />
             ))}
             <View style={styles.openContainer}>
-              {isClosedTemporarily && <View><Text style={styles.closedText}>CLOSED TEMPORARILY</Text></View>}
+              {isClosedTemporarily && (
+                <View>
+                  <Text style={styles.closedText}>CLOSED TEMPORARILY</Text>
+                </View>
+              )}
               {isOpenNow && <SvgXml xml={openPath} height={20} width={20} />}
-              <Image style={styles.icon} source={{uri: icon}} />
+              <Image style={styles.icon} source={{ uri: icon }} />
             </View>
           </View>
           <Text style={styles.address}>{address}</Text>
@@ -81,20 +83,21 @@ const styles = StyleSheet.create({
     paddingVertical: theme.spacing.sm,
   },
   openContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     flexGrow: 1,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
     paddingRight: theme.spacing.md,
   },
   closedText: {
-    color: 'red',
+    color: "red",
     marginHorizontal: theme.spacing.md,
+    fontFamily: theme.fonts.fontFamily.monospace,
   },
   icon: {
     width: 15,
     height: 15,
     marginLeft: theme.spacing.md,
-  }
+  },
 });
 
 const starPath = `<?xml version="1.0" encoding="iso-8859-1"?>
