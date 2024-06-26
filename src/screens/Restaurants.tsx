@@ -60,25 +60,24 @@ const Restaurants = (): JSX.Element => {
         <View style={styles.search}>
           <Searchbar placeholder="Search" value="" />
         </View>
-        <View style={styles.list}>
-          <FlatList
-            data={data}
-            keyExtractor={(item) => item.name}
-            renderItem={({ item }) => (
-              <View style={styles.listItemContainer}>
-                <PlaceCard
-                  name={item.name}
-                  icon={item.icon}
-                  photos={item.photos}
-                  address={item.address}
-                  isOpenNow={item.isOpenNow}
-                  rating={item.rating}
-                  isClosedTemporarily={item.isClosedTemporarily}
-                />
-              </View>
-            )}
-          />
-        </View>
+        <FlatList
+          contentContainerStyle={styles.list}
+          data={data}
+          keyExtractor={(item) => item.name}
+          renderItem={({ item }) => (
+            <View style={styles.listItemContainer}>
+              <PlaceCard
+                name={item.name}
+                icon={item.icon}
+                photos={item.photos}
+                address={item.address}
+                isOpenNow={item.isOpenNow}
+                rating={item.rating}
+                isClosedTemporarily={item.isClosedTemporarily}
+              />
+            </View>
+          )}
+        />
       </SafeAreaView>
       <ExpoStatusBar style="auto" />
     </>
