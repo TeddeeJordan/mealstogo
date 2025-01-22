@@ -2,8 +2,8 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { View, SafeAreaView, FlatList } from "react-native";
 import React from "react";
 
-import Searchbar from "../../components/SearchBar/Searchbar";
-import PlaceCard from "../../components/PlaceCard/PlaceCard";
+import Searchbar from "components/SearchBar/Searchbar";
+import PlaceCard from "components/PlaceCard/PlaceCard";
 import { styles } from "./restrauntsProps";
 
 const data = [
