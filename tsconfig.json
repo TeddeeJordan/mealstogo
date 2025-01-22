@@ -1,5 +1,9 @@
 {
   "extends": "expo/tsconfig.base",
+  "include": [
+    "src/components",
+    "src/custom.d.ts"
+  ],
   "compilerOptions": {
     "strict": true,
     "baseUrl": "./",
