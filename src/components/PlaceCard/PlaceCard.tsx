@@ -4,7 +4,7 @@ import { Card, Text } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import { styles, PlaceCardProps } from "./placeCardProps";
 
-const PlaceCard = ({
+function PlaceCard({
   name,
   icon,
   photos,
@@ -12,7 +12,7 @@ const PlaceCard = ({
   isOpenNow,
   rating,
   isClosedTemporarily,
-}: PlaceCardProps): JSX.Element => {
+}: PlaceCardProps): JSX.Element {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
@@ -44,7 +44,7 @@ const PlaceCard = ({
       </Card>
     </View>
   );
-};
+}
 
 export default PlaceCard;
 

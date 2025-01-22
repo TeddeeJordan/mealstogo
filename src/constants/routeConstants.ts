@@ -1,3 +1,5 @@
 export const RouteConstants = {
-  homeScreen: "homeScreen",
-};
+  restaurants: "restaurants",
+  map: "map",
+  settings: "settings",
+} as const;

@@ -5,7 +5,7 @@ import {
 } from "react-native-paper";
 import { styles } from "./searchbarProps";
 
-const Searchbar = ({ placeholder, value }: SearchbarProps): JSX.Element => {
+function Searchbar({ placeholder, value }: SearchbarProps): JSX.Element {
   return (
     <PaperSearchBar
       placeholder={placeholder}
@@ -13,6 +13,6 @@ const Searchbar = ({ placeholder, value }: SearchbarProps): JSX.Element => {
       value={value}
     />
   );
-};
+}
 
 export default Searchbar;

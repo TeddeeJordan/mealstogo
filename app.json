@@ -1,5 +1,6 @@
 {
   "expo": {
+    "experiments": { "tsconfigPaths": true } ,
     "name": "MyMealsToGo",
     "slug": "MyMealsToGo",
     "version": "0.0.1",
