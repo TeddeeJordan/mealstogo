@@ -2,19 +2,18 @@
   "extends": "expo/tsconfig.base",
   "include": [
     "src/components",
-    "src/custom.d.ts"
+    "declarations.d.ts"
   ],
   "compilerOptions": {
     "strict": true,
     "baseUrl": "./",
     "rootDir": ".",
     "paths": {
-      "*": ["./src/*"],
-      "@assets/*": ["./assets"],
-      "@components/*": ["./src/components"],
-      "@screens/*": ["./src/screens"],
-      "@navigation/*": ["./src/navigation"],
-      "@constants/*": ["./src/constants"],
+      "assets": ["./assets/*"],
+      "components": ["./src/components/*"],
+      "screens": ["./src/screens/*"],
+      "navigation": ["./src/navigation/*"],
+      "constants": ["./src/constants/*"],
     }
   }
 }

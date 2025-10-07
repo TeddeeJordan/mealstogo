@@ -13,7 +13,7 @@ function PlaceCard({
   isOpenNow,
   rating,
   isClosedTemporarily,
-}: PlaceCardProps): JSX.Element {
+}: PlaceCardProps): React.JSX.Element {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (

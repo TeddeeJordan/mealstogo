@@ -11,7 +11,7 @@ import { theme } from "./src/theme/theme";
 
 import TabStack from "./src/navigation/tabNavigation/_layout";
 
-export default function App(): JSX.Element {
+export default function App(): React.JSX.Element {
   let [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });

@@ -7,7 +7,7 @@ import Restaurants from "screens/Restaurants/Restaurants";
 
 const Tab = createBottomTabNavigator();
 
-export default function TabStack(): JSX.Element {
+export default function TabStack(): React.JSX.Element {
   return (
     <Tab.Navigator initialRouteName={RouteConstants.restaurants}>
       <Tab.Screen name={RouteConstants.restaurants} component={Restaurants} />

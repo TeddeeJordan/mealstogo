@@ -5,7 +5,7 @@ import {
 } from "react-native-paper";
 import { styles } from "./searchbarProps";
 
-function Searchbar({ placeholder, value }: SearchbarProps): JSX.Element {
+function Searchbar({ placeholder, value }: SearchbarProps): React.JSX.Element {
   return (
     <PaperSearchBar
       placeholder={placeholder}

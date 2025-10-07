@@ -47,7 +47,7 @@ const data = [
 
 // type RestaurantsProps = {};
 
-function Restaurants(): JSX.Element {
+function Restaurants(): React.JSX.Element {
   return (
     <>
       <SafeAreaView style={styles.container}>
