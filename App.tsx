@@ -5,12 +5,13 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { NavigationContainer } from "@react-navigation/native";
 
 import { theme } from "./src/theme/theme";
 
-import Restaurants from "./src/screens/Restaurants";
+import TabStack from "./src/navigation/tabNavigation/_layout";
 
-export default function App(): JSX.Element {
+export default function App(): React.JSX.Element {
   let [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -25,7 +26,9 @@ export default function App(): JSX.Element {
 
   return (
     <PaperProvider theme={theme}>
-      <Restaurants />
+      <NavigationContainer>
+        <TabStack />
+      </NavigationContainer>
     </PaperProvider>
   );
 }

@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
 import React from "react";
 import {
   Searchbar as PaperSearchBar,
   SearchbarProps,
 } from "react-native-paper";
+import { styles } from "./searchbarProps";
 
-const Searchbar = ({ placeholder, value }: SearchbarProps): JSX.Element => {
+function Searchbar({ placeholder, value }: SearchbarProps): React.JSX.Element {
   return (
     <PaperSearchBar
       placeholder={placeholder}
@@ -13,12 +13,6 @@ const Searchbar = ({ placeholder, value }: SearchbarProps): JSX.Element => {
       value={value}
     />
   );
-};
+}
 
 export default Searchbar;
-
-const styles = StyleSheet.create({
-  searchbar: {
-    marginHorizontal: "5%",
-  },
-});

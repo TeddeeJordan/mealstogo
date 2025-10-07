@@ -1,16 +1,10 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  StatusBar,
-  FlatList,
-} from "react-native";
+import { View, FlatList } from "react-native";
 import React from "react";
 
-import Searchbar from "../components/Searchbar";
-import PlaceCard from "../components/PlaceCard";
-import { theme } from "../theme/theme";
+import Searchbar from "components/SearchBar/Searchbar";
+import PlaceCard from "components/PlaceCard/PlaceCard";
+import { styles } from "./restrauntsProps";
 
 const data = [
   {
@@ -53,55 +47,33 @@ const data = [
 
 // type RestaurantsProps = {};
 
-const Restaurants = (): JSX.Element => {
+function Restaurants(): React.JSX.Element {
   return (
     <>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.search}>
-          <Searchbar placeholder="Search" value="" />
-        </View>
-        <FlatList
-          contentContainerStyle={styles.list}
-          data={data}
-          keyExtractor={(item) => item.name}
-          renderItem={({ item }) => (
-            <View style={styles.listItemContainer}>
-              <PlaceCard
-                name={item.name}
-                icon={item.icon}
-                photos={item.photos}
-                address={item.address}
-                isOpenNow={item.isOpenNow}
-                rating={item.rating}
-                isClosedTemporarily={item.isClosedTemporarily}
-              />
-            </View>
-          )}
-        />
-      </SafeAreaView>
+      <View style={styles.search}>
+        <Searchbar placeholder="Search" value="" />
+      </View>
+      <FlatList
+        contentContainerStyle={styles.list}
+        data={data}
+        keyExtractor={(item) => item.name}
+        renderItem={({ item }) => (
+          <View style={styles.listItemContainer}>
+            <PlaceCard
+              name={item.name}
+              icon={item.icon}
+              photos={item.photos}
+              address={item.address}
+              isOpenNow={item.isOpenNow}
+              rating={item.rating}
+              isClosedTemporarily={item.isClosedTemporarily}
+            />
+          </View>
+        )}
+      />
       <ExpoStatusBar style="auto" />
     </>
   );
-};
+}
 
 export default Restaurants;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
-  search: {
-    flexGrow: 0.05,
-    justifyContent: "center",
-    paddingLeft: theme.spacing.lg,
-  },
-  list: {
-    flexGrow: 0.95,
-    backgroundColor: theme.colors.bg.primary,
-    paddingTop: theme.spacing.md,
-  },
-  listItemContainer: {
-    paddingVertical: theme.spacing.md,
-  },
-});
