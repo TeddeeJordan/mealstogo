@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { View, SafeAreaView, FlatList } from "react-native";
+import { View, FlatList } from "react-native";
 import React from "react";
 
 import Searchbar from "components/SearchBar/Searchbar";
@@ -50,29 +50,27 @@ const data = [
 function Restaurants(): React.JSX.Element {
   return (
     <>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.search}>
-          <Searchbar placeholder="Search" value="" />
-        </View>
-        <FlatList
-          contentContainerStyle={styles.list}
-          data={data}
-          keyExtractor={(item) => item.name}
-          renderItem={({ item }) => (
-            <View style={styles.listItemContainer}>
-              <PlaceCard
-                name={item.name}
-                icon={item.icon}
-                photos={item.photos}
-                address={item.address}
-                isOpenNow={item.isOpenNow}
-                rating={item.rating}
-                isClosedTemporarily={item.isClosedTemporarily}
-              />
-            </View>
-          )}
-        />
-      </SafeAreaView>
+      <View style={styles.search}>
+        <Searchbar placeholder="Search" value="" />
+      </View>
+      <FlatList
+        contentContainerStyle={styles.list}
+        data={data}
+        keyExtractor={(item) => item.name}
+        renderItem={({ item }) => (
+          <View style={styles.listItemContainer}>
+            <PlaceCard
+              name={item.name}
+              icon={item.icon}
+              photos={item.photos}
+              address={item.address}
+              isOpenNow={item.isOpenNow}
+              rating={item.rating}
+              isClosedTemporarily={item.isClosedTemporarily}
+            />
+          </View>
+        )}
+      />
       <ExpoStatusBar style="auto" />
     </>
   );
