@@ -12,6 +12,8 @@ module.exports = function (api) {
             screens: "./src/screens",
             navigation: "./src/navigation",
             constants: "./src/constants",
+            theme: "./src/theme",
+            services: "./src/services",
           },
         },
       ],

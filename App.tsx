@@ -6,10 +6,11 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
+import { RestaurantsContextProvider } from "services/restaurants/restaurants.context";
 
-import { theme } from "./src/theme/theme";
+import { theme } from "theme/theme";
 
-import TabStack from "./src/navigation/tabNavigation/_layout";
+import TabStack from "navigation/tabNavigation/_layout";
 
 export default function App(): React.JSX.Element {
   let [oswaldLoaded] = useOswald({
@@ -26,9 +27,11 @@ export default function App(): React.JSX.Element {
 
   return (
     <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <TabStack />
-      </NavigationContainer>
+      <RestaurantsContextProvider>
+        <NavigationContainer>
+          <TabStack />
+        </NavigationContainer>
+      </RestaurantsContextProvider>
     </PaperProvider>
   );
 }
