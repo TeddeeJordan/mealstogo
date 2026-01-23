@@ -4,13 +4,15 @@ import {
   restaurantResults,
   transformedRestaurant,
 } from "./restaurants.service";
-import { TRestaurantContext, TResult } from "./mock/mocks.types";
+import { TResult } from "./mock/mocks.types";
 
 export const RestaurantsContext = createContext({
   restaurants: [],
 });
 
-export const RestaurantsContextProvider = ({ children }: any) => {
+export const RestaurantsContextProvider = ({
+  children,
+}: any): React.JSX.Element => {
   const [restaurants, setRestaurants] = useState<TResult>(undefined);
   const getRestaurants = async () => {
     try {
@@ -22,7 +24,7 @@ export const RestaurantsContextProvider = ({ children }: any) => {
   };
 
   useEffect(() => {
-    void getRestaurants();
+    getRestaurants();
   }, []);
 
   return (

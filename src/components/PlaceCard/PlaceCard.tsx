@@ -4,7 +4,6 @@ import { Card, Text } from "react-native-paper";
 import { styles, PlaceCardProps } from "./placeCardProps";
 import Star from "assets/svg/starPath.svg";
 import Open from "assets/svg/openPath.svg";
-import { TPhotos } from "./mock/mocks.types";
 
 function PlaceCard({
   name,
@@ -18,24 +17,14 @@ function PlaceCard({
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   const image =
-    photos[0].htmlAttributions[0].length > 0
+    photos && photos[0].htmlAttributions[0].length > 0
       ? photos[0].htmlAttributions[0]
-      : "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
-
-  console.log("IMAGE", image);
+      : "https://mint.fiu.edu/wp-content/uploads/2021/10/image-not-available-683x1024.jpg";
 
   return (
     <View style={styles.container}>
       <Card elevation={5} style={styles.card}>
-        <Card.Cover
-          key={name}
-          style={styles.cover}
-          source={{
-            uri: image,
-            height: photos[0].height,
-            width: photos[0].width,
-          }}
-        />
+        <Card.Cover key={name} style={styles.cover} src={image} />
         <Card.Content>
           <Text style={styles.title}>{name}</Text>
           <View style={styles.ratingContainer}>

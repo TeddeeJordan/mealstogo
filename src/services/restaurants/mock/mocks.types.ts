@@ -48,8 +48,8 @@ export type TResult =
 
 export type TPhotos = {
   height: number;
-  html_attributions: string[];
-  photo_reference: string;
+  htmlAttributions: string[];
+  photoReference: string;
   width: number;
 };
 
