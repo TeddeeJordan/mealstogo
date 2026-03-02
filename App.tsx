@@ -7,6 +7,8 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { NavigationContainer } from "@react-navigation/native";
 import { RestaurantsContextProvider } from "services/restaurants/restaurants.context";
+import { store } from "reduxToolkit/store";
+import { Provider } from "react-redux";
 
 import { theme } from "theme/theme";
 
@@ -27,11 +29,13 @@ export default function App(): React.JSX.Element {
 
   return (
     <PaperProvider theme={theme}>
-      <RestaurantsContextProvider>
-        <NavigationContainer>
-          <TabStack />
-        </NavigationContainer>
-      </RestaurantsContextProvider>
+      <Provider store={store}>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <TabStack />
+          </NavigationContainer>
+        </RestaurantsContextProvider>
+      </Provider>
     </PaperProvider>
   );
 }

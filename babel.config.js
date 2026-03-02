@@ -14,6 +14,7 @@ module.exports = function (api) {
             constants: "./src/constants",
             theme: "./src/theme",
             services: "./src/services",
+            reduxToolkit: "./src/redux",
           },
         },
       ],
