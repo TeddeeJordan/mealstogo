@@ -3,7 +3,7 @@ import errorReducer from "./slices";
 
 export const store = configureStore({
   reducer: {
-    errorReducer,
+    error: errorReducer,
   },
 });
 

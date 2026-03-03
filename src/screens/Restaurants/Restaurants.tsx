@@ -13,11 +13,9 @@ import ErrorIndicator from "components/ErrorIndicator/ErrorIndicator";
 
 function Restaurants(): React.JSX.Element {
   const restaurantContext: TRestaurantContext = useContext(RestaurantsContext);
-  const data = restaurantContext.restaurants;
+  const data = restaurantContext;
 
-  const error = useSelector((state: RootState) => state.error.error);
-
-  console.log("ERROR", error);
+  const error = useSelector((state: RootState) => state?.error.error);
 
   return (
     <>
@@ -25,7 +23,7 @@ function Restaurants(): React.JSX.Element {
         <Searchbar placeholder="Search" value="" />
       </View>
       {error ? (
-        <ErrorIndicator error={error[0]} />
+        <ErrorIndicator error={error} />
       ) : (
         <FlatList
           contentContainerStyle={styles.list}
