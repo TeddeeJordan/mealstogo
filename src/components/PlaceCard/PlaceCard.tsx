@@ -16,14 +16,15 @@ function PlaceCard({
 }: PlaceCardProps): React.JSX.Element {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
+  const image =
+    photos && photos[0].htmlAttributions[0].length > 0
+      ? photos[0].htmlAttributions[0]
+      : "https://mint.fiu.edu/wp-content/uploads/2021/10/image-not-available-683x1024.jpg";
+
   return (
     <View style={styles.container}>
       <Card elevation={5} style={styles.card}>
-        <Card.Cover
-          key={name}
-          style={styles.cover}
-          source={{ uri: photos[0] }}
-        />
+        <Card.Cover key={name} style={styles.cover} src={image} />
         <Card.Content>
           <Text style={styles.title}>{name}</Text>
           <View style={styles.ratingContainer}>

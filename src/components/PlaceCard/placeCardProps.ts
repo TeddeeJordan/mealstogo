@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import { theme } from "../../theme/theme";
-
+import { TPhotos } from "../../services/restaurants/mock/mocks.types";
 export interface PlaceCardProps {
   name: string;
   icon: string;
-  photos: string[];
+  photos: TPhotos[];
   address: string;
   isOpenNow: boolean;
   rating: number;
